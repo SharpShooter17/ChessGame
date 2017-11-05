@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.GameViewController">
+   	<stylesheets>
+    	<URL value="@style.css" />
+	</stylesheets>
+   <children>
+      <VBox>
+         <children>
+            <Pane>
+               <children>
+                  <Canvas fx:id="canvas" height="748.0" onMouseClicked="#canvasMouseClicked" width="1024.0" />
+               </children>
+            </Pane>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label text="You are: " />
+                  <Label fx:id="youAreLabel" text="label" />
+                  <ButtonBar prefHeight="40.0">
+                    <buttons>
+                        <Button fx:id="castlingShortButton" mnemonicParsing="false" onAction="#castlingShortButtonClicked" text="Castling short" />
+                        <Button fx:id="castlingLongButton" mnemonicParsing="false" onAction="#castlingLongButtonClicked" text="Castling long" />
+                      <Button mnemonicParsing="false" onAction="#giveUpButtonClicked" text="Give Up" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

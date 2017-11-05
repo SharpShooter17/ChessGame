@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.GameRoomViewController">
+   	<stylesheets>
+    	<URL value="@style.css" />
+	</stylesheets>
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+              <items>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="White">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin></Label>
+                              <TableView fx:id="whiteTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                <columns>
+                                  <TableColumn fx:id="whiteNickCol" editable="false" prefWidth="180.0" sortable="false" text="Nickname" />
+                                  <TableColumn fx:id="whiteReadyCol" editable="false" minWidth="7.0" prefWidth="70.0" resizable="false" sortable="false" text="Ready" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="Black">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </VBox.margin></Label>
+                              <TableView fx:id="blackTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                <columns>
+                                  <TableColumn fx:id="blackNickCol" editable="false" prefWidth="180.0" sortable="false" text="Nickname" />
+                                  <TableColumn fx:id="blackReadyCol" prefWidth="70.0" resizable="false" text="Ready" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </items>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </SplitPane>
+            <ButtonBar buttonMinWidth="100.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0">
+              <buttons>
+                  <Button fx:id="readyButton" mnemonicParsing="false" onAction="#readyToPlayButtonClick" text="Ready to play" />
+                <Button mnemonicParsing="false" onAction="#goToLobbyButtonClick" text="Go to lobby" />
+              </buttons>
+            </ButtonBar>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
