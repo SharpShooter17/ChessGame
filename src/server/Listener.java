@@ -3,11 +3,7 @@ package server;
 import java.io.IOException;
 import java.net.ServerSocket;
 
-import javafx.application.Platform;
-
 public class Listener {
-	public final static int SERVER_PORT = 62000;
-
 	private Server server;
 	Listener(){
 		server = new Server();
@@ -17,7 +13,7 @@ public class Listener {
 		server.start();
 		try {
 			@SuppressWarnings("resource")
-			ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
+			ServerSocket serverSocket = new ServerSocket(ServerConfiguration.getInstance().getPort());
 			while (true) {
 				Client client = new Client(server, serverSocket.accept());
 				server.addClient(client);

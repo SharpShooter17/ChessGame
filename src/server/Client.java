@@ -47,7 +47,7 @@ public class Client extends Thread{
 						this.close();
 						return;
 					} else {
-						System.out.println("Request code: " + request.getCodeRequest());
+						//System.out.println("Request code: " + request.getCodeRequest());
 						this.receiver.addRequest(request, this);
 					}
 				}

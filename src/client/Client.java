@@ -53,7 +53,7 @@ public class Client {
 
 	@SuppressWarnings("unchecked")
 	private void handleTheRequest(Request request){
-		System.out.println("Request");
+		//System.out.println("Request");
 		switch (request.getCodeRequest()){
 		case 500:	//lobby list
 			SceneController.getSceneController().getLobbyViewController().addLobby(requestGetList(request));
@@ -149,7 +149,7 @@ public class Client {
 	private void readRequest() throws ClassNotFoundException, IOException{
 		if (this.socket.getInputStream().available() > 0) {
 			Request request = (Request) this.in.readObject();
-			System.out.println("Client get code: " + request.getCodeRequest() );
+			//System.out.println("Client get code: " + request.getCodeRequest() );
 			addRequest(request);
 		}
 	}
@@ -160,7 +160,7 @@ public class Client {
 	}
 
 	public void sendRequest(Request request){
-		System.out.println("Send request. Code: " + request.getCodeRequest());
+		//System.out.println("Send request. Code: " + request.getCodeRequest());
 		try {
 			this.out.reset();
 			this.out.writeObject(request);
